@@ -1,0 +1,16 @@
+{
+  "name": "Astro Paper",
+  "short_name": "astro-paper",
+  "description": "A minimal, responsive and SEO-friendly Astro blog theme.",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "36x36",
+      "type": "image/vnd.microsoft.icon",
+      "purpose": "any"
+    }
+  ]
+}

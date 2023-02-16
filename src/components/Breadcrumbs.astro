@@ -15,7 +15,7 @@ breadcrumbList[0] === "posts" &&
 <nav class="breadcrumb" aria-label="breadcrumb">
   <ul>
     <li>
-      <a href="/">Home</a>
+      <a href={__BASE__}>Home</a>
       <span aria-hidden="true">&#62;</span>
     </li>
     {
@@ -23,7 +23,7 @@ breadcrumbList[0] === "posts" &&
         index + 1 === breadcrumbList.length ? (
           <li>
             <span
-              class={`${index > 0 ? "lowercase" : "capitalize"}`}
+              class:list={`${index > 0 ? "lowercase" : "capitalize"}`}
               aria-current="page"
             >
               {/* make the last part lowercase in Home > Tags > some-tag */}
@@ -32,7 +32,7 @@ breadcrumbList[0] === "posts" &&
           </li>
         ) : (
           <li>
-            <a href={`/${breadcrumb}`}>{breadcrumb}</a>
+            <a href={__BASE__ + breadcrumb}>{breadcrumb}</a>
             <span aria-hidden="true">&#62;</span>
           </li>
         )

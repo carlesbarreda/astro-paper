@@ -1,0 +1,19 @@
+{
+  "framework": "astro",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "devCommand": "pnpm dev --site https://www.example.com --port $PORT",
+  "buildCommand": "pnpm build --site https://www.example.com",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Permissions-Policy",
+          "value": "interest-cohort=()"
+        }
+      ]
+    }
+  ]
+}

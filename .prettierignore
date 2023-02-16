@@ -11,3 +11,8 @@
 !.prettierrc
 !.eslintrc.js
 !README.md
+
+# /public/pwa
+*.ico
+*.png
+*.jpg
