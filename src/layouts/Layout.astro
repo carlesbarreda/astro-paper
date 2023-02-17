@@ -123,10 +123,9 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     <!-- TODO: pwaInfo is undefined but manifest is generated -->
     <link rel="manifest" href={__BASE__ + "manifest.webmanifest"} />
+    <!-- TODO: Document base maybe can be generated in pwaInfo.webManifest.linkTag -->
+    <base href={__BASE__} />
     <!-- End: Vite PWA manifest -->
-    <!-- Document base -->
-    <base href={import.meta.env.SITE + __BASE__} />
-    <!-- End: Document base -->
   </head>
   <body>
     <slot />
