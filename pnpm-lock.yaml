@@ -14,7 +14,7 @@ importers:
       '@types/workbox-build': ^5.1.0
       '@typescript-eslint/eslint-plugin': ^5.52.0
       '@typescript-eslint/parser': ^5.52.0
-      '@vite-pwa/astro': github:vite-pwa/astro#userquin/feat-file-output
+      '@vite-pwa/astro': ^0.0.2
       astro: ^2.0.12
       astro-eslint-parser: ^0.11.0
       commitizen: ^4.3.0
@@ -57,7 +57,7 @@ importers:
       '@types/workbox-build': 5.1.0
       '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
       '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
-      '@vite-pwa/astro': github.com/vite-pwa/astro/744a9337a4c69792febe2fa171cbacf47c255703
+      '@vite-pwa/astro': 0.0.2_rj4euxxovyz2hccb3pmnxkijsa
       astro-eslint-parser: 0.11.0
       commitizen: 4.3.0
       cz-conventional-changelog: 3.3.0
@@ -2140,6 +2140,16 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.52.0
       eslint-visitor-keys: 3.3.0
+    dev: true
+
+  /@vite-pwa/astro/0.0.2_rj4euxxovyz2hccb3pmnxkijsa:
+    resolution: {integrity: sha512-5UJ0vShEkGonyUvCvBeGX8uf5zoL6ZLNzf5HU3RyvpMuvUfuO5nqmAz8R94Fd+I8nyjEZumqNb4WjVs2HXrxIw==, tarball: https://registry.npmjs.org/@vite-pwa/astro/-/astro-0.0.2.tgz}
+    peerDependencies:
+      astro: ^1.6.0 || ^2.0.0
+      vite-plugin-pwa: ^0.13.3
+    dependencies:
+      astro: 2.0.14
+      vite-plugin-pwa: 0.14.4_hqils2veansstxzaefh32znarq
     dev: true
 
   /@vscode/emmet-helper/2.8.6:
@@ -6735,9 +6745,3 @@ packages:
 
   /zwitch/2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==, tarball: https://registry.npmjs.org/zwitch/-/zwitch-2.0.4.tgz}
-
-  github.com/vite-pwa/astro/744a9337a4c69792febe2fa171cbacf47c255703:
-    resolution: {tarball: https://codeload.github.com/vite-pwa/astro/tar.gz/744a9337a4c69792febe2fa171cbacf47c255703}
-    name: '@vite-pwa/astro'
-    version: 0.0.1
-    dev: true
