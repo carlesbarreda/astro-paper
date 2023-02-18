@@ -26,7 +26,7 @@ ARGS.base += !ARGS.base.endsWith("/") ? "/" : "";
 
 console.log("ARGS");
 console.log(ARGS);
-console.log("import." + "meta.env");
+console.log("import,meta.env");
 console.log(import.meta.env);
 
 export const SITE = {
