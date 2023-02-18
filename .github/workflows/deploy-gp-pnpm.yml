@@ -6,8 +6,8 @@ name: Deploy Astro site to GitHub Pages [pnpm]
 
 on:
   # Runs on pushes targeting the default branch
-  push:
-    branches: ["astropaper-pwa"]
+  #push:
+  #  branches: ["astropaper-pwa"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,16 +35,6 @@ jobs:
       # https://github.com/actions/checkout
       - name: Checkout
         uses: actions/checkout@v3
-
-      # https://github.com/actions/checkout
-      #- name: Checkout @vite-pwa/astro
-      #  uses: actions/checkout@v3
-      #  with:
-      #    #repository: vite-pwa/astro
-      #    #ref: userquin/feat-file-output
-      #    repository: carlesbarreda/vite-pwa-astro
-      #    ref: feat-file-output
-      #    path: vite-pwa-astro
 
       # https://github.com/actions/setup-node
       # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md
@@ -76,15 +66,6 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-
-      #- name: Build @vite-pwa/astro
-      #  id: build-pwa-astro
-      #  shell: bash
-      #  run: |
-      #    cd "vite-pwa-astro"
-      #    pnpm install --frozen-lockfile
-      #    pnpm build
-      #    cd ..
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
