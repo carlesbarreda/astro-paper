@@ -13,7 +13,7 @@ importers:
       '@types/react-dom': ^18.0.11
       '@typescript-eslint/eslint-plugin': ^5.52.0
       '@typescript-eslint/parser': ^5.52.0
-      '@vite-pwa/astro': ^0.0.2
+      '@vite-pwa/astro': ^0.0.3
       astro: ^2.0.12
       astro-eslint-parser: ^0.11.0
       commitizen: ^4.3.0
@@ -34,7 +34,7 @@ importers:
       satori: ^0.3.1
       tailwindcss: ^3.2.4
       typescript: ^4.9.5
-      vite: ^4.1.1
+      vite: ^4.1.2
     dependencies:
       '@astrojs/rss': 2.1.1
       astro: 2.0.14
@@ -53,7 +53,7 @@ importers:
       '@types/react-dom': 18.0.11
       '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
       '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
-      '@vite-pwa/astro': 0.0.2_astro@2.0.14+vite@4.1.2
+      '@vite-pwa/astro': 0.0.3_astro@2.0.14+vite@4.1.2
       astro-eslint-parser: 0.11.0
       commitizen: 4.3.0
       cz-conventional-changelog: 3.3.0
@@ -2126,8 +2126,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vite-pwa/astro/0.0.2_astro@2.0.14+vite@4.1.2:
-    resolution: {integrity: sha512-5UJ0vShEkGonyUvCvBeGX8uf5zoL6ZLNzf5HU3RyvpMuvUfuO5nqmAz8R94Fd+I8nyjEZumqNb4WjVs2HXrxIw==, tarball: https://registry.npmjs.org/@vite-pwa/astro/-/astro-0.0.2.tgz}
+  /@vite-pwa/astro/0.0.3_astro@2.0.14+vite@4.1.2:
+    resolution: {integrity: sha512-erBJ4XQbW+zF58JUe6qG3q11aoE4VKbJrrGAikVIhwlQVpOiHVI69Gy+SX+QVlISDRO9Rn5pS9tVobxjfRYMRg==, tarball: https://registry.npmjs.org/@vite-pwa/astro/-/astro-0.0.3.tgz}
     peerDependencies:
       astro: ^1.6.0 || ^2.0.0
     dependencies:
