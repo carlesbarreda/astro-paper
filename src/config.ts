@@ -6,17 +6,14 @@ export const ARGS: {
   mode?: "development" | "production";
   site?: string;
   base?: string;
-} = {};
-
-ARGS.mode = import.meta.env.PROD ? "production" : "development";
-
-ARGS.site = import.meta.env.SITE
-  ? import.meta.env.SITE
-  : import.meta.env.PROD
-  ? "https://astro-paper.pages.dev"
-  : "http://localhost:3000";
-
-ARGS.base = import.meta.env.BASE_URL ?? "/";
+} = {
+  mode: import.meta.env.PROD ? "production" : "development",
+  site:
+    import.meta.env.SITE ?? import.meta.env.PROD
+      ? "https://astro-paper.pages.dev"
+      : "http://localhost:3000",
+  base: import.meta.env.BASE_URL ?? "/astro-paper/",
+};
 
 // Parse Argo CLI flags
 for (let i = 0; i < process.argv.length; i++) {
