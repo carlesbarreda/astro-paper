@@ -132,10 +132,9 @@ export const PWA: Partial<VitePWAOptions> = {
         revision: null,
       },
     ],
-    */
     runtimeCaching: [
       {
-        urlPattern: /^https:\/\/www\.1001fonts\.com\/.*/i,
+        urlPattern: /^https:\/\/www\.1001fonts\.com\/.* /i,
         handler: "CacheFirst",
         options: {
           cacheName: "1001-fonts-cache",
@@ -149,10 +148,34 @@ export const PWA: Partial<VitePWAOptions> = {
         },
       },
       {
-        urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+        urlPattern: /^https:\/\/fonts\.googleapis\.com\/.* /i,
         handler: "CacheFirst",
         options: {
           cacheName: "google-fonts-cache",
+          expiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+          },
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
+      },
+    ],
+
+    */
+    additionalManifestEntries: [
+      {
+        url: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap",
+        revision: null,
+      },
+    ],
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/www\.1001fonts\.com\/.*/i,
+        handler: "CacheFirst",
+        options: {
+          cacheName: "1001-fonts-cache",
           expiration: {
             maxEntries: 10,
             maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
