@@ -117,8 +117,8 @@ export const PWA: Partial<VitePWAOptions> = {
       //{url: 'https://static.express/img/.../connection-lost.svg', revision: null},
     ],
     */
+    /*
     additionalManifestEntries: [
-      /*
       {
         url: "https://www.1001fonts.com/download/font/ibm-plex-mono.regular.ttf",
         revision: null,
@@ -127,10 +127,40 @@ export const PWA: Partial<VitePWAOptions> = {
         url: "https://www.1001fonts.com/download/font/ibm-plex-mono.bold.ttf",
         revision: null,
       },
-      */
       {
         url: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap",
         revision: null,
+      },
+    ],
+    */
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/www\.1001fonts\.com\/.*/i,
+        handler: "CacheFirst",
+        options: {
+          cacheName: "1001-fonts-cache",
+          expiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+          },
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
+      },
+      {
+        urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+        handler: "CacheFirst",
+        options: {
+          cacheName: "google-fonts-cache",
+          expiration: {
+            maxEntries: 10,
+            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+          },
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
       },
     ],
     globDirectory: "dist",
