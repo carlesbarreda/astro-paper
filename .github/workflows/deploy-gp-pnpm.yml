@@ -40,8 +40,10 @@ jobs:
       - name: Checkout @vite-pwa/astro
         uses: actions/checkout@v3
         with:
-          repository: carlesbarreda/vite-pwa-astro
-          ref: feat-astro-2-support
+          #repository: carlesbarreda/vite-pwa-astro
+          #ref: feat-astro-2-support
+          repository: vite-pwa/astro
+          ref: userquin/feat-file-output
           path: pwa-astro
 
       # https://github.com/actions/setup-node
