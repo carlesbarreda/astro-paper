@@ -28,4 +28,8 @@ module.exports = {
       },
     },
   ],
+  globals: {
+    __SITE__: true,
+    __BASE__: true,
+  },
 };
