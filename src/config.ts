@@ -124,7 +124,7 @@ export const PWA: Partial<VitePWAOptions> = {
     // Don't fallback on document based (e.g. `/some-page`) requests
     // This removes an errant console.log message from showing up.
     //navigateFallback: null,
-    //navigateFallback: ARGS.base + "404",
+    navigateFallback: ARGS.base + "404",
     //navigateFallback: ARGS.base,
   },
   devOptions: {
