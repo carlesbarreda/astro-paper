@@ -37,7 +37,7 @@ jobs:
         uses: actions/checkout@v3
 
       # https://github.com/actions/checkout
-      - name: Checkout
+      - name: Checkout @vite-pwa/astro
         uses: actions/checkout@v3
         with:
           repository: carlesbarreda/vite-pwa-astro
@@ -75,8 +75,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      - name: Build @vite-pwa/astro
+        id: build-pwa-astro
+        shell: bash
+        run: |
+          cd "pwa-astro"
+          pnpm install --no-frozen-lockfile
+          pnpm build
+          cd ..
+
       - name: Install dependencies
-        run: pnpm recursive install --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       # https://github.com/actions/configure-pages
       # https://github.com/actions/configure-pages/blob/main/action.yml
