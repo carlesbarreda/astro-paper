@@ -15,7 +15,7 @@
     { "mode": "auto" }
   ],
   "eslint.validate": ["javascript", "astro", "typescript"],
-	"eslint.packageManager": "pnpm",
+	//"eslint.packageManager": "pnpm",
   "eslint.nodePath": "node_modules",
 
   "prettier.enable": true,
