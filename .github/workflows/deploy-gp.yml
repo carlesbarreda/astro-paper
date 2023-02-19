@@ -63,10 +63,19 @@ jobs:
       # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md
       - name: Setup Node
         uses: actions/setup-node@v3
+        if: ${{ steps.detect-package-manager.outputs.manager != 'pnpm' }}
         with:
           node-version: "18"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
+
+      # https://github.com/actions/setup-node
+      # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
+        with:
+          node-version: "18"
 
       # https://github.com/pnpm/action-setup
       - name: Install pnpm
