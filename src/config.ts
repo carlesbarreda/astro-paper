@@ -8,21 +8,9 @@ export const ARGS: {
   base?: string;
 } = {
   mode: import.meta.env.PROD ? "production" : "development",
-  site:
-    import.meta.env.SITE ?? import.meta.env.PROD
-      ? "https://astro-paper.pages.dev"
-      : "http://localhost:3000",
-  base: import.meta.env.BASE_URL ?? "/astro-paper/",
+  site: import.meta.env.SITE ?? "https://astro-paper.pages.dev",
+  base: import.meta.env.BASE_URL ?? "/",
 };
-
-// Parse Argo CLI flags
-for (let i = 0; i < process.argv.length; i++) {
-  if (process.argv[i] === "--site") ARGS.site = process.argv[++i];
-  if (process.argv[i] === "--base") ARGS.base = process.argv[++i];
-}
-
-// Add trailing slash if nedded
-ARGS.base += !ARGS.base.endsWith("/") ? "/" : "";
 
 console.log("ARGS");
 console.log(ARGS);
@@ -31,7 +19,7 @@ console.log(import.meta.env);
 
 export const SITE = {
   //website: "https://astro-paper.pages.dev/",
-  website: ARGS.site + ARGS.base,
+  website: `${ARGS.site}${ARGS.base}`,
   author: "Sat Naing",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
   title: "AstroPaper",
@@ -58,8 +46,8 @@ export const PWA: Partial<VitePWAOptions> = {
   includeAssets: ["favicon.svg"],
   buildBase: ARGS.base,
   manifest: {
-    id: ARGS.base + "?astropaper",
-    start_url: ARGS.base + "?standalone=true",
+    id: `${ARGS.base}?astropaper`,
+    start_url: `${ARGS.base}?standalone=true`,
     name: "AstroPaper",
     short_name: "AstroPaper",
     description: "A minimal, responsive and SEO-friendly Astro blog theme.",
@@ -70,31 +58,31 @@ export const PWA: Partial<VitePWAOptions> = {
     dir: "ltr",
     icons: [
       {
-        src: ARGS.base + "pwa/manifest-icon-192.maskable.png",
+        src: `${ARGS.base}pwa/manifest-icon-192.maskable.png`,
         sizes: "192x192",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: ARGS.base + "pwa/manifest-icon-192.maskable.png",
+        src: `${ARGS.base}pwa/manifest-icon-192.maskable.png`,
         sizes: "192x192",
         type: "image/png",
         purpose: "maskable",
       },
       {
-        src: ARGS.base + "pwa/manifest-icon-512.maskable.png",
+        src: `${ARGS.base}pwa/manifest-icon-512.maskable.png`,
         sizes: "512x512",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: ARGS.base + "pwa/manifest-icon-512.maskable.png",
+        src: `${ARGS.base}pwa/manifest-icon-512.maskable.png`,
         sizes: "512x512",
         type: "image/png",
         purpose: "maskable",
       },
       {
-        src: ARGS.base + "favicon.ico",
+        src: `${ARGS.base}favicon.ico`,
         sizes: "36x36",
         type: "image/vnd.microsoft.icon",
         purpose: "any",
@@ -180,12 +168,12 @@ export const PWA: Partial<VitePWAOptions> = {
     globPatterns: [
       "**/*.{js,html,css,svg,png,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,ico,txt}",
     ],
-    navigateFallback: ARGS.base + "404",
+    navigateFallback: `${ARGS.base}404`,
   },
   devOptions: {
     enabled: import.meta.env.DEV,
     type: "classic",
-    navigateFallback: ARGS.base + "404",
+    navigateFallback: `${ARGS.base}404`,
   },
 };
 
