@@ -97,6 +97,7 @@ jobs:
       # https://github.com/pnpm/action-setup
       - name: Install pnpm
         uses: pnpm/action-setup@v2
+        working-directory: ${{ env.BUILD_PATH }}
         id: pnpm-install
         if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
         with:
