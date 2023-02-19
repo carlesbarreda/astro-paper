@@ -72,7 +72,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         id: pnpm-install
-        if: ${{ steps.detect-package-manager.outputs.manager == "pnpm" }}
+        if: ${{ steps.detect-package-manager.outputs.manager }} == 'pnpm'
         with:
           version: latest
           run_install: |
@@ -81,14 +81,14 @@ jobs:
 
       - name: Get pnpm store directory
         id: pnpm-cache
-        if: ${{ steps.detect-package-manager.outputs.manager == "pnpm" }}
+        if: ${{ steps.detect-package-manager.outputs.manager }} == 'pnpm'
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - name: Setup pnpm cache
         uses: actions/cache@v3
-        if: ${{ steps.detect-package-manager.outputs.manager == "pnpm" }}
+        if: ${{ steps.detect-package-manager.outputs.manager }} == 'pnpm'
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
