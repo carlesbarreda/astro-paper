@@ -101,10 +101,7 @@ jobs:
         if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
         with:
           version: latest
-          run_install: |
-            - recursive: true
-              args: [--frozen-lockfile]
-              cwd: ${{ env.BUILD_PATH }}
+          run_install: false
 
       - name: Get pnpm store directory
         id: pnpm-cache
