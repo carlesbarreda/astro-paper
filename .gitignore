@@ -25,4 +25,4 @@ pnpm-debug.log*
 # vscode settings
 #.vscode/settings.json
 
-vite-pwa-astro
+packages

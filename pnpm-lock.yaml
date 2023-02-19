@@ -1,5 +1,8 @@
 lockfileVersion: 5.4
 
+overrides:
+  vite-plugin-pwa: link:./packages/vite-plugin-pwa
+
 importers:
 
   .:
@@ -13,7 +16,7 @@ importers:
       '@types/react-dom': ^18.0.11
       '@typescript-eslint/eslint-plugin': ^5.52.0
       '@typescript-eslint/parser': ^5.52.0
-      '@vite-pwa/astro': file:./vite-pwa-astro
+      '@vite-pwa/astro': ^0.0.3
       astro: ^2.0.14
       astro-eslint-parser: ^0.11.0
       commitizen: ^4.3.0
@@ -53,7 +56,7 @@ importers:
       '@types/react-dom': 18.0.11
       '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
       '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
-      '@vite-pwa/astro': file:vite-pwa-astro_astro@2.0.14+vite@4.1.2
+      '@vite-pwa/astro': 0.0.3_astro@2.0.14
       astro-eslint-parser: 0.11.0
       commitizen: 4.3.0
       cz-conventional-changelog: 3.3.0
@@ -67,6 +70,96 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.9.5
+      vite: 4.1.2
+
+  packages/vite-plugin-pwa:
+    specifiers:
+      '@antfu/eslint-config': ^0.33.1
+      '@antfu/ni': ^0.18.8
+      '@rollup/plugin-replace': ^5.0.1
+      '@types/debug': ^4.1.7
+      '@types/node': ^18.11.12
+      '@types/prompts': ^2.4.2
+      '@types/react': ^18.0.26
+      '@types/workbox-build': ^5.0.1
+      '@typescript-eslint/eslint-plugin': ^5.46.0
+      debug: ^4.3.4
+      eslint: ^8.29.0
+      esno: 0.16.3
+      fast-glob: ^3.2.12
+      kolorist: ^1.6.0
+      preact: ^10.11.3
+      pretty-bytes: ^6.0.0
+      prompts: ^2.4.2
+      react: ^18.2.0
+      rollup: ^3.7.2
+      solid-js: ^1.6.4
+      svelte: ^3.54.0
+      tsup: ^6.2.3
+      typescript: ^4.9.4
+      vite: ^4.0.0
+      vue: ^3.2.45
+      workbox-build: ^6.5.4
+      workbox-window: ^6.5.4
+    dependencies:
+      '@rollup/plugin-replace': 5.0.2_rollup@3.17.1
+      debug: 4.3.4
+      fast-glob: 3.2.12
+      pretty-bytes: 6.1.0
+      rollup: 3.17.1
+      workbox-build: 6.5.4
+      workbox-window: 6.5.4
+    devDependencies:
+      '@antfu/eslint-config': 0.33.1_7kw3g6rralp5ps6mg3uyzz6azm
+      '@antfu/ni': 0.18.8
+      '@types/debug': 4.1.7
+      '@types/node': 18.14.0
+      '@types/prompts': 2.4.2
+      '@types/react': 18.0.28
+      '@types/workbox-build': 5.1.0
+      '@typescript-eslint/eslint-plugin': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
+      eslint: 8.34.0
+      esno: 0.16.3
+      kolorist: 1.7.0
+      preact: 10.12.1
+      prompts: 2.4.2
+      react: 18.2.0
+      solid-js: 1.6.11
+      svelte: 3.55.1
+      tsup: 6.6.3_typescript@4.9.5
+      typescript: 4.9.5
+      vite: 4.1.2_@types+node@18.14.0
+      vue: 3.2.47
+
+  packages/vite-pwa-astro:
+    specifiers:
+      '@antfu/eslint-config': ^0.35.2
+      '@antfu/ni': ^0.20.0
+      '@types/debug': ^4.1.7
+      '@types/workbox-build': ^5.0.1
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      astro: ^2.0.6
+      bumpp: ^8.2.1
+      eslint: ^8.34.0
+      https-localhost: ^4.7.1
+      typescript: ^4.9.5
+      unbuild: ^1.1.2
+      vite: ^4.0.4
+      vite-plugin-pwa: link:../vite-plugin-pwa
+    dependencies:
+      vite-plugin-pwa: link:../vite-plugin-pwa
+    devDependencies:
+      '@antfu/eslint-config': 0.35.2_7kw3g6rralp5ps6mg3uyzz6azm
+      '@antfu/ni': 0.20.0
+      '@types/debug': 4.1.7
+      '@types/workbox-build': 5.1.0
+      '@typescript-eslint/eslint-plugin': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
+      astro: 2.0.14
+      bumpp: 8.2.1
+      eslint: 8.34.0
+      https-localhost: 4.7.1
+      typescript: 4.9.5
+      unbuild: 1.1.2
       vite: 4.1.2
 
   vite-pwa-astro:
@@ -3761,6 +3854,15 @@ packages:
       vite: 3.2.5
     transitivePeerDependencies:
       - rollup
+    dev: true
+
+  /@vite-pwa/astro/0.0.3_astro@2.0.14:
+    resolution: {integrity: sha512-erBJ4XQbW+zF58JUe6qG3q11aoE4VKbJrrGAikVIhwlQVpOiHVI69Gy+SX+QVlISDRO9Rn5pS9tVobxjfRYMRg==, tarball: https://registry.npmjs.org/@vite-pwa/astro/-/astro-0.0.3.tgz}
+    peerDependencies:
+      astro: ^1.6.0 || ^2.0.0
+    dependencies:
+      astro: 2.0.14
+      vite-plugin-pwa: link:packages/vite-plugin-pwa
     dev: true
 
   /@vitejs/plugin-react-refresh/1.3.6:
@@ -11293,19 +11395,4 @@ packages:
     transitivePeerDependencies:
       - '@types/babel__core'
       - supports-color
-
-  file:vite-pwa-astro_astro@2.0.14+vite@4.1.2:
-    resolution: {directory: vite-pwa-astro, type: directory}
-    id: file:vite-pwa-astro
-    name: '@vite-pwa/astro'
-    version: 0.0.3
-    peerDependencies:
-      astro: ^1.6.0 || ^2.0.0
-    dependencies:
-      astro: 2.0.14
-      vite-plugin-pwa: file:vite-pwa-astro/vite-plugin-pwa_vite@4.1.2
-    transitivePeerDependencies:
-      - '@types/babel__core'
-      - supports-color
-      - vite
-    dev: true
+    dev: false

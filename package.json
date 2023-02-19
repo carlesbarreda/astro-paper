@@ -36,7 +36,7 @@
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
-    "@vite-pwa/astro": "file:./vite-pwa-astro",
+    "@vite-pwa/astro": "^0.0.3",
     "astro-eslint-parser": "^0.11.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -61,5 +61,13 @@
     "*": [
       "prettier --plugin-search-dir=. --write"
     ]
+  },
+  "peerDependencies": {
+    "workbox-window": "^6.5.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite-plugin-pwa": "link:./packages/vite-plugin-pwa"
+    }
   }
 }

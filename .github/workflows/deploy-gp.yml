@@ -43,13 +43,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: carlesbarreda/vite-plugin-pwa
-          path: ${{ env.BUILD_PATH }}/vite-pwa-astro/vite-plugin-pwa
-
-      - name: Checkout vite-pwa-astro
-        uses: actions/checkout@v3
-        with:
-          repository: carlesbarreda/vite-pwa-astro
-          path: ${{ env.BUILD_PATH }}/vite-pwa-astro
+          ref: astro2-integration
+          path: ${{ env.BUILD_PATH }}/packages/vite-plugin-pwa
 
       - name: Detect package manager
         id: detect-package-manager
@@ -130,19 +125,11 @@ jobs:
 
       - name: Install vite-plugin-pwa dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        working-directory: ${{ env.BUILD_PATH }}/vite-pwa-astro/vite-plugin-pwa
+        working-directory: ${{ env.BUILD_PATH }}/vite-plugin-pwa
 
       - name: Build vite-plugin-pwa dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
-        working-directory: ${{ env.BUILD_PATH }}/vite-pwa-astro/vite-plugin-pwa
-
-      - name: Install vite-pwa-astro dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        working-directory: ${{ env.BUILD_PATH }}/vite-pwa-astro
-
-      - name: Build vite-pwa-astro dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build
-        working-directory: ${{ env.BUILD_PATH }}/vite-pwa-astro
+        working-directory: ${{ env.BUILD_PATH }}/vite-plugin-pwa
 
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
