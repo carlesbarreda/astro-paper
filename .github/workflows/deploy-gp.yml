@@ -37,7 +37,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          path: astro-paper
+          path: ${{ env.BUILD_PATH }}
 
       - name: Checkout vite-plugin-pwa
         uses: actions/checkout@v3
