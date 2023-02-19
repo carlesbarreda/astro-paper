@@ -13,7 +13,7 @@ importers:
       '@types/react-dom': ^18.0.11
       '@typescript-eslint/eslint-plugin': ^5.52.0
       '@typescript-eslint/parser': ^5.52.0
-      '@vite-pwa/astro': ^0.0.3
+      '@vite-pwa/astro': file:../vite-pwa-astro
       astro: ^2.0.14
       astro-eslint-parser: ^0.11.0
       commitizen: ^4.3.0
@@ -53,7 +53,7 @@ importers:
       '@types/react-dom': 18.0.11
       '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
       '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
-      '@vite-pwa/astro': 0.0.3_astro@2.0.14+vite@4.1.2
+      '@vite-pwa/astro': file:../vite-pwa-astro_astro@2.0.14+vite@4.1.2
       astro-eslint-parser: 0.11.0
       commitizen: 4.3.0
       cz-conventional-changelog: 3.3.0
@@ -2124,19 +2124,6 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.52.0
       eslint-visitor-keys: 3.3.0
-    dev: true
-
-  /@vite-pwa/astro/0.0.3_astro@2.0.14+vite@4.1.2:
-    resolution: {integrity: sha512-erBJ4XQbW+zF58JUe6qG3q11aoE4VKbJrrGAikVIhwlQVpOiHVI69Gy+SX+QVlISDRO9Rn5pS9tVobxjfRYMRg==, tarball: https://registry.npmjs.org/@vite-pwa/astro/-/astro-0.0.3.tgz}
-    peerDependencies:
-      astro: ^1.6.0 || ^2.0.0
-    dependencies:
-      astro: 2.0.14
-      vite-plugin-pwa: 0.14.4_vite@4.1.2
-    transitivePeerDependencies:
-      - '@types/babel__core'
-      - supports-color
-      - vite
     dev: true
 
   /@vscode/emmet-helper/2.8.6:
@@ -6325,24 +6312,6 @@ packages:
       unist-util-stringify-position: 3.0.3
       vfile-message: 3.1.4
 
-  /vite-plugin-pwa/0.14.4_vite@4.1.2:
-    resolution: {integrity: sha512-M7Ct0so8OlouMkTWgXnl8W1xU95glITSKIe7qswZf1tniAstO2idElGCnsrTJ5NPNSx1XqfTCOUj8j94S6FD7Q==, tarball: https://registry.npmjs.org/vite-plugin-pwa/-/vite-plugin-pwa-0.14.4.tgz}
-    peerDependencies:
-      vite: ^3.1.0 || ^4.0.0
-    dependencies:
-      '@rollup/plugin-replace': 5.0.2_rollup@3.17.1
-      debug: 4.3.4
-      fast-glob: 3.2.12
-      pretty-bytes: 6.1.0
-      rollup: 3.17.1
-      vite: 4.1.2
-      workbox-build: 6.5.4
-      workbox-window: 6.5.4
-    transitivePeerDependencies:
-      - '@types/babel__core'
-      - supports-color
-    dev: true
-
   /vite/4.1.2:
     resolution: {integrity: sha512-MWDb9Rfy3DI8omDQySbMK93nQqStwbsQWejXRY2EBzEWKmLAXWb1mkI9Yw2IJrc+oCvPCI1Os5xSSIBYY6DEAw==, tarball: https://registry.npmjs.org/vite/-/vite-4.1.2.tgz}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -6731,3 +6700,40 @@ packages:
 
   /zwitch/2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==, tarball: https://registry.npmjs.org/zwitch/-/zwitch-2.0.4.tgz}
+
+  file:../vite-plugin-pwa_vite@4.1.2:
+    resolution: {directory: ../vite-plugin-pwa, type: directory}
+    id: file:../vite-plugin-pwa
+    name: vite-plugin-pwa
+    version: 0.14.4
+    peerDependencies:
+      vite: ^3.1.0 || ^4.0.0
+    dependencies:
+      '@rollup/plugin-replace': 5.0.2_rollup@3.17.1
+      debug: 4.3.4
+      fast-glob: 3.2.12
+      pretty-bytes: 6.1.0
+      rollup: 3.17.1
+      vite: 4.1.2
+      workbox-build: 6.5.4
+      workbox-window: 6.5.4
+    transitivePeerDependencies:
+      - '@types/babel__core'
+      - supports-color
+    dev: true
+
+  file:../vite-pwa-astro_astro@2.0.14+vite@4.1.2:
+    resolution: {directory: ../vite-pwa-astro, type: directory}
+    id: file:../vite-pwa-astro
+    name: '@vite-pwa/astro'
+    version: 0.0.3
+    peerDependencies:
+      astro: ^1.6.0 || ^2.0.0
+    dependencies:
+      astro: 2.0.14
+      vite-plugin-pwa: file:../vite-plugin-pwa_vite@4.1.2
+    transitivePeerDependencies:
+      - '@types/babel__core'
+      - supports-color
+      - vite
+    dev: true

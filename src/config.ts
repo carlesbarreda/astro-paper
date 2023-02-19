@@ -12,6 +12,15 @@ export const ARGS: {
   base: import.meta.env.BASE_URL ?? "/",
 };
 
+// Parse Argo CLI flags
+for (let i = 0; i < process.argv.length; i++) {
+  if (process.argv[i] === "--site") ARGS.site = process.argv[++i];
+  if (process.argv[i] === "--base") ARGS.base = process.argv[++i];
+}
+
+// Add trailing slash if nedded
+ARGS.base += !ARGS.base?.endsWith("/") ? "/" : "";
+
 console.log("ARGS");
 console.log(ARGS);
 console.log("import,meta.env");
@@ -172,7 +181,8 @@ export const PWA: Partial<VitePWAOptions> = {
     navigateFallback: `${ARGS.base}404`,
   },
   devOptions: {
-    enabled: import.meta.env.DEV,
+    //enabled: import.meta.env.DEV,
+    enabled: true,
     type: "classic",
     navigateFallback: `${ARGS.base}404`,
   },
