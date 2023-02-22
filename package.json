@@ -50,6 +50,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^4.9.5",
+    "vite-plugin-pwa": "git+https://github.com/carlesbarreda/vite-plugin-pwa.git#astro2-integration",
     "vite": "^4.1.2"
   },
   "config": {
@@ -61,13 +62,5 @@
     "*": [
       "prettier --plugin-search-dir=. --write"
     ]
-  },
-  "peerDependencies": {
-    "workbox-window": "^6.5.4"
-  },
-  "pnpm": {
-    "overrides": {
-      "vite-plugin-pwa": "link:./packages/vite-plugin-pwa"
-    }
   }
 }
